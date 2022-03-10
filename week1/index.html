@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Hello, world</h1>
+    <p>all the lorem ipsum....</p>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" id="clicky" target="_blank">Gittin' Gud at links</a>
+    <h2 id="hidden-text" hidden>GET RICKROLLED!</h2>
+    <script>
+    var clickMe = document.getElementById('clicky');
+    var hidden = document.getElementById('hidden-text');
+    clickMe.onclick = updateText;
+
+    function updateText(){
+        hidden.removeAttribute('hidden');
+    }
+    </script>
+</body>
+
+
+
+</html>
