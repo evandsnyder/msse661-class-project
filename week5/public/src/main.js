@@ -1,14 +1,17 @@
-const doLogin = function(e) {
+const doLogin = async (e) =>{
     e.preventDefault();
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-  
-    login({
-      username: username,
-      password: password
-    }).then(function(res) {
-      window.location.href = 'home.html';
-    });
+
+    const res = await login({username, password});
+
+    const {auth, access_token, refresh_token} = res;
+
+    setStorage('isAuth', auth);
+    setStorage('access_token', access_token);
+    setStorage('refresh_token', refresh_token);
+
+    window.location.href = 'home.html';
   };
   
   const doRegister = function(e) {
@@ -28,4 +31,16 @@ const doLogin = function(e) {
   
   const doLogout = function(e) {
     e.preventDefault();
+    logout();
+
+    window.location.href = '/';
   };
+
+  (() => {
+    if(!storageHasData()) return;
+
+    const isAuth = getStorage('isAuth');
+
+    !isAuth ? document.getElementById('logout').style.display = 'none' : document.getElementById('logout').style.display = 'block';
+
+  });
