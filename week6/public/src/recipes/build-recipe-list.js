@@ -36,6 +36,26 @@ class RecipeList{
         return td;
     }
 
+    generateActionButtons = (recipe) => {
+        const div = document.createElement('div');
+
+        const deleteButton = document.createElement('button');
+        deleteButton.appendChild(document.createTextNode('Delete'));
+        deleteButton.className='delete-btn';
+
+        const editButton = document.createElement('button');
+        editButton.appendChild(document.createTextNode('Edit'));
+        editButton.onclick = () => {
+            // Create the popupbox...
+            buildPopUpDialog(recipe);
+        };
+
+        div.appendChild(editButton);
+        div.appendChild(deleteButton);
+
+        return div;
+    }
+
     generateRecipeTable = (recipe) => {
         const table = document.createElement('table')
         table.className = 'recipe-table'
@@ -46,6 +66,7 @@ class RecipeList{
         header.appendChild(this.generateTableHeader('Hops'));
         header.appendChild(this.generateTableHeader('Yeast'));
         header.appendChild(this.generateTableHeader('Instructions'));
+        header.appendChild(this.generateTableHeader('Actions'));
 
         const data = document.createElement('tr');
         data.appendChild(this.generateTextDataRow(recipe.name));
@@ -53,6 +74,7 @@ class RecipeList{
         data.appendChild(this.generateListDataRow(recipe.hops))
         data.appendChild(this.generateTextDataRow(recipe.yeast));
         data.appendChild(this.generateTextDataRow(recipe.process));
+        data.appendChild(this.generateActionButtons(recipe));
 
         table.appendChild(header);
         table.appendChild(data);
@@ -63,6 +85,7 @@ class RecipeList{
 
     generateTableList = () =>{
         const ul = document.createElement('ul')
+        ul.className = 'recipe-list';
         this.recipes.forEach(recipe => {
             ul.appendChild(this.generateRecipeTable(recipe));
         })
@@ -71,8 +94,8 @@ class RecipeList{
 
     generateRecipes = async () => {
         const response = await getRecipes();
-        const div = document.getElementById('recipe-list');
-        const loadingDiv = div.childNodes[0];
+        const div = document.getElementById('recipe-list-container');
+        const loadingDiv = div.childNodes[1];
 
         if(response.length){
             this.recipes = response;

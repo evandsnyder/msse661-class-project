@@ -90,3 +90,73 @@ a:hover {
     margin: 10px;
     text-decoration: underline;
 }
+
+.recipe-table {
+    border: 1px solid grey;
+    border-radius: 4px;
+    width: 80em;
+    table-layout: fixed;
+    margin-bottom: 50px;
+}
+
+tr{
+    width: 20em;
+}
+
+#recipe-list-container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#recipe-list{
+    display: flex;
+    flex-direction: row;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+    border-radius: 4px;
+    cursor:pointer;
+}
+
+ul{
+    list-style: none;
+}
+
+
+#popUpBox{
+    width: 60em;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 10px;
+    display: none;
+}
+
+.popup-form-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-list-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.input-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-list-row-wrapper{
+    display: flex;
+    flex-direction: row;
+}

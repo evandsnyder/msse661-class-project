@@ -1,6 +1,25 @@
 const access_token = storageHasData() ? getStorage('access_token') : '';
 const token = `Bearer ${access_token}`;
 
+const DEFAULT_OPTIONS = {
+  headers: {
+    'Content-Type': 'application/json',
+  },
+};
+
+const DEFAULT_OPTIONS_WITH_AUTH = {
+  headers: {
+    Authorization: token,
+    'Content-Type': 'application/json',
+  },
+};
+
+const OPTIONS_WITH_AUTH = {
+  headers: {
+    Authorization: token,
+  },
+};
+
 const _get = async (url) => {
   const res = await fetch(url, {
     method: 'GET',
