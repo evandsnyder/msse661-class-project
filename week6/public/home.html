@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/flex.css" rel="stylesheet"/>
+        <link href="css/recipes.css" rel="styleshet"/>
+        <title>Week 4: Authentication</title>
+    </head>
+    <body>
+        <div class="main">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="./home.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a id="logout" href="" onclick="doLogout(event)">Logout</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="content">
+                <div id="recipe-list">
+                    <p>Loading....</p>
+                </div>
+            </div>
+
+            <footer>
+                <nav>
+                    <ul>
+                        <li><a href="./home.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a id="logout" href="" onclick="doLogout(event)">Logout</a></li>
+                    </ul>
+                </nav>
+                <p class="attribution">Author: <a href="https://github.com/evandsnyder">Evan Snyder</a></p>
+            </footer>
+        </div>
+    </body>
+    <script src="src/api.config.js"></script>
+    <script src="src/simple-storage.js"></script>
+    <script src="src/authentication/auth.service.js" ></script>
+    <script src="src/route-guard.js"></script>
+    <script src="src/authentication/auth.js" ></script>
+    <script src="src/http-request.service.js" ></script>
+    <script src="src/recipes/recipes.service.js"></script>
+    <script src="src/recipes/build-recipe-list.js"></script>
+</html>

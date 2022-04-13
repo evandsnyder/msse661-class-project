@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/flex.css" rel="stylesheet"/>
+        <title>Week 4: Authentication</title>
+    </head>
+    <body>
+        <div class="main">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="content">
+                <form class="login">
+                    <input id="username" type="text" placeholder="Username"/>
+                    <input id="password" type="password" placeholder="Password"/>
+                    <button onclick="doLogin(event)">Login</button>
+                    <a class="register-btn" href="register.html">Need an account? Register here!</a>
+                </form>
+            </div>
+
+            <footer>
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                    </ul>
+                </nav>
+                <p class="attribution">Author: <a href="https://github.com/evandsnyder">Evan Snyder</a></p>
+            </footer>
+        </div>
+    </body>
+    <script src="src/api.config.js"></script>
+    <script src="src/simple-storage.js"></script>
+    <script src="src/authentication/auth.js" ></script>
+    <script src="src/authentication/auth.service.js" ></script>
+    <script src="src/http-request.service.js" ></script>
+</html>
