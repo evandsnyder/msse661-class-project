@@ -1,0 +1,162 @@
+html, body{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.content{
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+header, footer, .content{
+    flex-shrink: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    background-color: teal;
+}
+
+nav > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+nav > ul > li {
+    padding: 15px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 3em;
+    border-radius: 5px;
+    margin: auto;
+    width: 30%;
+    align-content: space-around;
+}
+
+input {
+    padding: 10px;
+}
+
+.attribution {
+    text-align: center;
+    justify-content: center;
+}
+
+footer {
+    margin-top: auto;
+    background-color: teal;
+}
+
+input[type=text], input[type=password] {
+    border: none;
+    border-bottom: 2px solid gray;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.register-btn {
+    color: blue !important;
+    text-align: center;
+    margin: 10px;
+    text-decoration: underline;
+}
+
+.recipe-table {
+    border: 1px solid grey;
+    border-radius: 4px;
+    width: 80em;
+    table-layout: fixed;
+    margin-bottom: 50px;
+}
+
+tr{
+    width: 20em;
+}
+
+#recipe-list-container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#recipe-list{
+    display: flex;
+    flex-direction: row;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+    border-radius: 4px;
+    cursor:pointer;
+}
+
+ul{
+    list-style: none;
+}
+
+
+#popUpBox{
+    width: 60em;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 10px;
+    display: none;
+}
+
+.popup-form-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-list-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.input-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-list-row-wrapper{
+    display: flex;
+    flex-direction: row;
+}
