@@ -1,4 +1,3 @@
-const doAddRecipe = async (e) => {
-    e.preventDefault();
-    recipeBrowser._addRecipeEventHandler();
-  };
+const doOpenDialog = (recipe)=>{
+    dialogService.buildPopUpDialog(recipe);
+}

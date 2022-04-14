@@ -55,7 +55,7 @@ class RecipeBrowser {
         editButton.appendChild(document.createTextNode('Edit'));
         editButton.onclick = () => {
             // Create the popupbox...
-            buildPopUpDialog(recipe);
+            doOpenDialog(recipe);
         };
 
         div.appendChild(editButton);
@@ -94,6 +94,7 @@ class RecipeBrowser {
     generateTableList = () =>{
         const ul = document.createElement('ul')
         ul.className = 'recipe-list';
+        ul.id='recipe-list';
         this.recipes.forEach(recipe => {
             ul.appendChild(this.generateRecipeTable(recipe));
         })
@@ -111,6 +112,18 @@ class RecipeBrowser {
         } else {
             div.replaceChild(generateErrorMessage(res.msg));
         }
+    }
+
+    addRecipe = (recipe) => {
+        // We'll need to add to the existing items...
+        this.recipeService.updateRecipe(recipe);
+        const list = document.getElementById('recipe-list');
+        list.appendChild(this.generateRecipeTable(recipe));
+    }
+
+    updateRecipe = (recipe) => {
+        this.recipeService.updateRecipe(recipe);
+        // May need to refresh page or find/update existing one on page.
     }
 
     render = async () =>{e

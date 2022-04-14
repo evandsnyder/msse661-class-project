@@ -27,6 +27,7 @@
             </div>
 
             <div class="content">
+                <button onclick="doOpenDialog()">Add New Recipe</button>
                 <div id="recipe-list-container">
                     <p>Loading....</p>
                 </div>
@@ -44,13 +45,14 @@
             </footer>
         </div>
     </body>
-    <script src="src/api.config.js"></script>
-    <script src="src/simple-storage.js"></script>
-    <script src="src/authentication/auth.service.js" ></script>
-    <script src="src/route-guard.js"></script>
-    <script src="src/authentication/auth.js" ></script>
-    <script src="src/http-request.service.js" ></script>
-    <script src="src/recipes/recipes.service.js"></script>
-    <script src="src/recipes/edit-recipe.js"></script>
-    <script src="src/recipes/build-recipe-list.js"></script>
+    <script src="../src/api.config.js"></script>
+    <script src="../src/simple-storage.js"></script>
+    <script src="../src/authentication/auth.service.js" ></script>
+    <script src="../src/route-guard.js"></script>
+    <script src="../src/authentication/auth.js" ></script>
+    <script src="../src/http-request.service.js" ></script>
+    <script src="./recipes.service.js"></script>
+    <script src="../src/recipes/edit-recipe.js"></script>
+    <script src="./recipe-browser.service.js"></script>
+    <script src="../src/main.js"></script>
 </html>
